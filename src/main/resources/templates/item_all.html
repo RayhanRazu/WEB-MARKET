@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Person List</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<div align="center">
+    <h1>Person List</h1>
+
+    <a href="item/add">Add item</a>
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+        <tr th:each ="item : ${item}">
+            <td th:utext="${item.name}"> </td>
+            <td th:utext="${item.price}"></td>
+            <td> <form action="storage" method="get">
+                <input type="submit" value="add pair" name="id" />
+                </form>
+            </td>
+        </tr>
+    </table>
+    <a href="/storage/all"> Storage </a>
+</div>
+</body>
+</html>

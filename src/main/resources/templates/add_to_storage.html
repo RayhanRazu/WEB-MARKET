@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div align="center">
+    <form  action="#"   method="POST" th:object="${storage}">
+        <p>Size (US):<input type="number" step="0.5" min="0" th:field="*{size}" /> </p>
+        <p>Volume: <input type="text" th:field="*{volume}" /> </p>
+        <input type="submit" value="Submit" /></p>
+    </form>
+</div>
+</body>
+</html>

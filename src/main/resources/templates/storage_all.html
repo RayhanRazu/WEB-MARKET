@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Srorage</title>
+</head>
+<body>
+<div align="center">
+    <h1>Srorage List</h1>
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Size</th>
+            <th>Pairs</th>
+        </tr>
+        <tr th:each ="storage : ${storage}">
+            <td th:utext="${storage.item.name}"> </td>
+            <td th:utext="${storage.size}"></td>
+            <td th:utext="${storage.volume}"></td>
+            <td> <form action="add" method="get">
+                <input type="submit" th:value="add" name="id" id="add" />
+            </form>
+            </td>
+        </tr>
+    </table>
+    <a href="/item/all"> Item list </a>
+</div>
+</body>
+</html>
